@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 // --- SVG Icons Component Helper ---
 const Icon = {
@@ -89,49 +90,49 @@ const SERVICES = [
     id: "wardrobes",
     name: "Wardrobes",
     desc: "Custom wardrobes designed to store your clothes and keep your room tidy.",
-    img: "https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=600&q=80",
+    img: "/images/services/wardrobe.png",
   },
   {
     id: "kitchens",
     name: "Kitchen Cabinets",
     desc: "Clean and practical kitchen cabinets built for daily cooking and easy care.",
-    img: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80",
+    img: "/images/services/kitchen.png",
   },
   {
     id: "beds",
     name: "Beds",
     desc: "Strong luxury bed frames crafted for deep rest and stylish bedrooms.",
-    img: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80",
+    img: "/images/services/bed.png",
   },
   {
     id: "tv-consoles",
     name: "TV Panels & Consoles",
     desc: "Modern wall units and consoles that make your living area look neat.",
-    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+    img: "/images/services/tv-console.png",
   },
   {
     id: "wall-panels",
     name: "Wall Panels",
     desc: "Decorative wall panels that add instant warmth and class to empty walls.",
-    img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80",
+    img: "/images/services/wall-panels.png",
   },
   {
     id: "office",
     name: "Office Tables",
     desc: "Executive office desks that keep your work area comfortable and organized.",
-    img: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80",
+    img: "/images/services/office.png",
   },
   {
     id: "doors",
     name: "Doors",
     desc: "Solid interior and exterior doors made with smooth, durable finishes.",
-    img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
+    img: "/images/services/door.png",
   },
   {
     id: "custom",
     name: "Custom Furniture",
     desc: "Made-to-order furniture pieces built to fit your exact measurements.",
-    img: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=80",
+    img: "/images/services/custom.png",
   },
 ];
 
@@ -150,37 +151,37 @@ const PORTFOLIO_ITEMS = [
   {
     category: "Bedrooms",
     title: "Luxury Master Suite",
-    img: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+    img: "/images/portfolio/bedroom.png",
   },
   {
     category: "Wardrobes",
     title: "Walk-In Glass Wardrobe",
-    img: "https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=800&q=80",
+    img: "/images/portfolio/wardrobe.png",
   },
   {
     category: "Kitchens",
     title: "Modern Marble Island Kitchen",
-    img: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80",
+    img: "/images/portfolio/kitchen.png",
   },
   {
     category: "TV Units",
     title: "Floating Marble TV Wall",
-    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+    img: "/images/portfolio/tv-unit.png",
   },
   {
     category: "Wall Panels",
     title: "Acoustic Wood Paneling",
-    img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
+    img: "/images/portfolio/wall-panel.png",
   },
   {
     category: "Doors",
     title: "Solid Oak Security Entrance",
-    img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+    img: "/images/portfolio/door.png",
   },
   {
     category: "Office Furniture",
     title: "Executive Desk & Shelving",
-    img: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80",
+    img: "/images/portfolio/office.png",
   },
 ];
 
@@ -434,12 +435,15 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
         {/* Dark Luxury Overlay Background Image */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=80"
+          <Image
+            src="/images/hero.png"
             alt="Luxury Interior Background"
+            width={100}
+            height={100}
             className="w-full h-full object-cover opacity-25 scale-105"
+            loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/70 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#0D0D0D] via-[#0D0D0D]/70 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -524,10 +528,13 @@ export default function Home() {
             className="lg:col-span-5 relative"
           >
             <div className="relative mx-auto rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl bg-neutral-900">
-              <img
-                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+              <Image
+                src="/images/hero2.png"
                 alt="Luxury Furniture Showroom"
-                className="w-full h-[480px] object-cover hover:scale-105 transition duration-700"
+                width={100}
+                height={100}
+                className="w-full h-120 object-cover hover:scale-105 transition duration-700"
+                loading="lazy"
               />
               <div className="absolute bottom-4 left-4 right-4 bg-[#0D0D0D]/90 backdrop-blur-md p-4 rounded-xl border border-neutral-800">
                 <p className="text-xs text-[#D4AF37] font-semibold tracking-wider uppercase">
@@ -554,10 +561,13 @@ export default function Home() {
               className="relative"
             >
               <div className="rounded-2xl overflow-hidden border border-neutral-800 shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80"
+                <Image
+                  src="/images/about.png"
                   alt="Carpenter Crafting Wood Furniture"
-                  className="w-full h-[450px] object-cover"
+                  width={100}
+                  height={100}
+                  className="w-full h-112.5 object-cover"
+                  loading="eager"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-[#2C1A0E] text-[#D4AF37] p-6 rounded-2xl border border-[#D4AF37]/30 hidden md:block max-w-xs shadow-2xl">
@@ -639,12 +649,15 @@ export default function Home() {
                 className="bg-[#161616] border border-neutral-800 rounded-2xl overflow-hidden hover:border-[#D4AF37]/50 transition group"
               >
                 <div className="h-48 overflow-hidden relative">
-                  <img
+                  <Image
                     src={item.img}
                     alt={item.name}
+                    width={100}
+                    height={100}
                     className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#161616] to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#161616] to-transparent" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white group-hover:text-[#D4AF37] transition">
@@ -747,10 +760,13 @@ export default function Home() {
                   className="bg-[#161616] border border-neutral-800 rounded-2xl overflow-hidden group relative"
                 >
                   <div className="h-64 overflow-hidden">
-                    <img
+                    <Image
                       src={item.img}
                       alt={item.title}
+                      width={100}
+                      height={100}
                       className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                      loading="lazy"
                     />
                   </div>
                   <div className="p-5 flex items-center justify-between">
@@ -854,7 +870,7 @@ export default function Home() {
       </section>
 
       {/* CALL TO ACTION */}
-      <section className="py-20 bg-gradient-to-r from-[#2C1A0E] via-[#1A1009] to-[#0D0D0D] border-y border-[#D4AF37]/30 relative overflow-hidden">
+      <section className="py-20 bg-linear-to-r from-[#2C1A0E] via-[#1A1009] to-[#0D0D0D] border-y border-[#D4AF37]/30 relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Ready To Transform Your Space?
