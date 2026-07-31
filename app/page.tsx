@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 // --- SVG Icons Component Helper ---
 const Icon = {
@@ -149,39 +150,44 @@ const REASONS = [
 
 const PORTFOLIO_ITEMS = [
   {
-    category: "Bedrooms",
-    title: "Luxury Master Suite",
-    img: "/images/portfolio/bedroom.png",
-  },
-  {
-    category: "Wardrobes",
-    title: "Walk-In Glass Wardrobe",
-    img: "/images/portfolio/wardrobe.png",
-  },
-  {
     category: "Kitchens",
-    title: "Modern Marble Island Kitchen",
-    img: "/images/portfolio/kitchen.png",
+    title: "Dark Glass LED Kitchen",
+    img: "/images/portfolio/project6.jpg",
   },
   {
     category: "TV Units",
-    title: "Floating Marble TV Wall",
-    img: "/images/portfolio/tv-unit.png",
+    title: "Fluted Wood TV Wall Unit",
+    img: "/images/portfolio/project2.jpg",
   },
   {
-    category: "Wall Panels",
-    title: "Acoustic Wood Paneling",
-    img: "/images/portfolio/wall-panel.png",
+    category: "Wardrobes",
+    title: "Luxury Wardrobe with Lighted Vanity",
+    img: "/images/portfolio/project7.jpg",
   },
   {
-    category: "Doors",
-    title: "Solid Oak Security Entrance",
-    img: "/images/portfolio/door.png",
+    category: "Kitchens",
+    title: "Book Shelf and Table for offices",
+    img: "/images/portfolio/project5.jpg",
+  },
+  {
+    category: "Bedrooms",
+    title: "Wood Vanity with Arched Mirror",
+    img: "/images/portfolio/project4.jpg",
   },
   {
     category: "Office Furniture",
-    title: "Executive Desk & Shelving",
-    img: "/images/portfolio/office.png",
+    title: "Executive Wooden Desk Set",
+    img: "/images/portfolio/project8.jpg",
+  },
+  {
+    category: "custom",
+    title: "Other Projects",
+    img: "/images/portfolio/project1.jpg",
+  },
+  {
+    category: "Kitchens",
+    title: "Light Wood Modular Kitchen",
+    img: "/images/portfolio/project3.jpg",
   },
 ];
 
@@ -305,12 +311,12 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <a href="#" className="flex flex-col">
-            <span className="text-xl md:text-2xl font-bold tracking-tight text-white">
-              ALBERT <span className="text-[#D4AF37]">FURNITURES</span>
-            </span>
-            <span className="text-[10px] tracking-widest text-neutral-400 uppercase">
-              Quality • Style • Comfort
-            </span>
+            <Image 
+              src={"/images/goodlife_logo.png"}
+              width={70}
+              height={20}
+              alt="goodlife_logo"
+            />
           </a>
 
           {/* Desktop Nav */}
@@ -341,13 +347,13 @@ export default function Home() {
           {/* Nav CTAs */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="https://wa.me/2348142261463?text=Hello%20Albert%20Furnitures,%20I%20would%20like%20to%20get%20a%20free%20quote."
+              href="https://wa.me/2348142261463?text=Hello%20Albert%20Furnitures,%20I%20would%20like%20to%20work%20on%20a%20project."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 bg-[#D4AF37] text-black font-semibold px-5 py-2.5 rounded-full hover:bg-yellow-500 transition text-sm shadow-lg shadow-[#D4AF37]/20"
             >
               <Icon.WhatsApp />
-              <span>Free Quote</span>
+              <span>Start Project</span>
             </a>
           </div>
 
@@ -392,9 +398,9 @@ export default function Home() {
               className="lg:hidden bg-[#141414] border-b border-neutral-800 px-6 py-6"
             >
               <div className="flex flex-col space-y-4 text-base">
-                <a href="#about" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="#about" onClick={() => setMobileMenuOpen(false)}>
                   About
-                </a>
+                </Link>
                 <a href="#services" onClick={() => setMobileMenuOpen(false)}>
                   Services
                 </a>
@@ -417,7 +423,7 @@ export default function Home() {
                   Contact
                 </a>
                 <a
-                  href="https://wa.me/2348142261463?text=Hello%20Albert%20Furnitures,%20I%20would%20like%20to%20get%20a%20free%20quote."
+                  href="https://wa.me/2348142261463?text=Hello%20Albert%20Furnitures,%20I%20would%20like%20you%20to%20work%20on%20a%20Project."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2 bg-[#D4AF37] text-black font-semibold py-3 rounded-lg mt-2"
@@ -432,7 +438,7 @@ export default function Home() {
       </nav>
 
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-28 mt-4 pb-16 overflow-hidden">
         {/* Dark Luxury Overlay Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -475,7 +481,7 @@ export default function Home() {
                 href="#contact"
                 className="bg-[#D4AF37] hover:bg-yellow-500 text-black font-semibold text-center px-8 py-4 rounded-xl transition shadow-xl shadow-[#D4AF37]/20"
               >
-                Get Free Quote
+               Start Your Project
               </a>
               <a
                 href="https://wa.me/2348142261463?text=Hello%20Albert%20Furnitures,%20I%20want%20to%20discuss%20a%20project."
@@ -884,7 +890,7 @@ export default function Home() {
               href="#contact"
               className="bg-[#D4AF37] hover:bg-yellow-500 text-black font-semibold px-8 py-4 rounded-xl transition text-sm shadow-xl"
             >
-              Get Free Quote
+              Start Project
             </a>
             <a
               href="https://wa.me/2348142261463?text=Hello%20Albert%20Furnitures,%20I%20am%20ready%20to%20start."
@@ -992,7 +998,7 @@ export default function Home() {
             {/* Contact Form */}
             <div className="lg:col-span-7 bg-[#141414] p-8 md:p-10 rounded-2xl border border-neutral-800">
               <h3 className="text-xl font-bold text-white mb-2">
-                Request A Free Quote
+                Start Project
               </h3>
               <p className="text-xs text-neutral-400 mb-6">
                 Fill out this short form and we will call you back fast.
@@ -1067,7 +1073,7 @@ export default function Home() {
                     type="submit"
                     className="w-full bg-[#D4AF37] hover:bg-yellow-500 text-black font-semibold py-4 rounded-xl transition"
                   >
-                    Send Quote Request
+                    Send Project Request
                   </button>
                 </form>
               )}
